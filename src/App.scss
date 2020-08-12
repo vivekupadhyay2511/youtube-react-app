@@ -1,0 +1,203 @@
+body {
+  font-size:30px;
+  font-family: Roboto, Arial, sans-serif;
+  .Header {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    background-color: #ffffff;
+    padding: 8px 14px;
+    border-bottom: solid 1px #e4e4e4;
+
+    .HeaderSection{ 
+      width: 100%;
+      display: flex;
+    }
+
+    .youtube-icon {
+      margin-right: 5px;
+      a{
+        padding: 8px 10px;
+        svg{
+          pointer-events: none; 
+          width: 24px; 
+          height: 24px;
+          margin-top: 8px;
+          fill: #606060;
+        }
+        img {
+          width: 32px; 
+          height: 32px;
+          border-radius: 50%;
+          margin: 4px 6px 0px 14px;
+        }
+      }
+
+    }      
+
+    .HeaderLeft {
+      a{
+        text-decoration: none;
+        img.youtube-logo {
+          width: 80px;
+          height: auto;
+          padding: 10px 0px 10px 9px;
+        }
+        span.country-code {
+          color: #606060;
+          font-size: 10px;
+          position: absolute;
+          padding: 8px 2px;
+        }
+      }
+    }
+    .HeaderCenter {  
+      #search-form {
+        width: 100%;
+        display: flex;
+        height: 32px;
+        margin-top: 4px;
+      }
+
+      #search-input {
+        font-size: 16px;
+        max-width: 100%;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-radius: 3px 0 0 3px;
+        padding: 2px 8px;
+        flex: 1;
+        display: flex;
+        box-shadow: inset 0 1px 2px #eee;
+        &:focus{
+          border: 1px solid #1c62b9;
+        }
+        &:active{
+          border: 1px solid #1c62b9;
+        }
+
+      }  
+      #search-icon-legacy {
+        cursor: pointer;
+        width: 65px;
+        border: 1px solid #d3d3d3;
+        background-color: #f8f8f8;
+        border-radius: 0 3px 3px 0;
+        margin: 0;
+        svg{
+          padding-top: 3px;
+          fill: #929292;
+          width: 20px;
+          height: 20px;
+        }
+      }  
+    }
+    .HeaderRight {
+      justify-content: flex-end;
+      margin-right: 34px;
+    }
+  }
+
+
+  .Sidebar {
+    padding: 13px 0;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    margin-top: 55px;
+    box-shadow: 1px 1px 2px #00000012;
+
+    .sidebarItem{  
+      padding: 0 24px;
+      a {
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: flex;
+        transition: 0.3s;        
+        .icon {
+          margin-right: 24px;
+          pointer-events: none; 
+          margin-top: 8px;
+          color: #606060;
+          span{
+            font-size: 24px;
+          }
+        }
+        .title{
+          font-size: 14px;
+          line-height: 40px;
+          color: #000000;
+        }
+      }
+      &.active{
+        background-color: #0000001a;
+        .icon span{
+          color: red;
+        }
+        .title{
+          font-weight: 500;
+        }
+      }
+
+    }
+    .sidebarItem:hover {
+      background-color: #0000000d;
+    }
+
+
+    .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .saperator{
+      border-top: 1px solid #0000001a;
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+  }
+
+  .MainContent{
+    max-width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 65px;
+  }
+
+
+  .Footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #f7f7f7;
+    p {
+      font-size: 12px;
+      margin: 0px;  
+    }
+    img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+  }
+  
+  @media screen and (max-height: 450px) {
+    .Sidebar {padding-top: 15px;}
+    .Sidebar a {font-size: 18px;}
+  }
+
+}
